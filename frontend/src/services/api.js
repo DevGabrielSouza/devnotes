@@ -1,6 +1,7 @@
 export function loadLists() {
     return [
       { 
+        id: 1,
         title: 'Tarefas', 
         creatable: true,
         cards: [
@@ -37,6 +38,7 @@ export function loadLists() {
         ]
       },
       { 
+        id: 2,
         title: 'Fazendo', 
         creatable: false,
         cards: [
@@ -49,6 +51,7 @@ export function loadLists() {
         ]
       },
       { 
+        id: 3,
         title: 'Pausado', 
         creatable: false,
         cards: [
@@ -72,6 +75,7 @@ export function loadLists() {
         ]
       },
       { 
+        id: 4,
         title: 'Concluído', 
         creatable: false,
         done: true,

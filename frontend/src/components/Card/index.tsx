@@ -2,18 +2,20 @@ import React from 'react'
 import { Container } from './style';
 
 import { useDrag, useDrop } from 'react-dnd';
-import DropCard from '../DropCard';
+import DropCard from '../DropCard/index';
 
 interface CardProps{
-    data: any;
+    data: any,
+    listId: number,
 }
 
-export default function Card(data: CardProps) {
+export default function Card(card: CardProps) {
 
     const [{ isDragging }, dragRef] = useDrag({
         item: {
             type: 'CARD',
-            id: data.data.id,
+            id: card.data.id,
+            listId: card.listId,
         },
         collect: monitor => ({
             isDragging: monitor.isDragging(),
@@ -30,7 +32,7 @@ export default function Card(data: CardProps) {
             <Container ref={dragRef} isDragging={isDragging}>
 
                 <header>
-                    {data.data.content}
+                    {card.data.content}
                 </header>
 
                 <div className="content">
@@ -39,7 +41,7 @@ export default function Card(data: CardProps) {
 
 
             </Container>
-            <DropCard/>
+            <DropCard cardBefore={card.data.id} toListId={card.listId} />
         </>
     )
 }

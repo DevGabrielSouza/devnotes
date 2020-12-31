@@ -5,8 +5,9 @@ import { MdAdd } from 'react-icons/md';
 import Card from '../Card';
 
 interface BoardListProps{
-    title: string;
-    cards: any;
+    title: string,
+    cards: any,
+    id: number,
 }
 
 
@@ -29,7 +30,7 @@ export default function BoardList(props: BoardListProps) {
                 <ul>
 
                     { cardList.map((card, index)  => (
-                        <Card key={index} data={card} />
+                        <Card key={index} data={card} listId={props.id} />
                     )) }
 
                 </ul>

@@ -7,6 +7,7 @@ export const Container = styled.div`
   margin: 10px 0px;
   border-radius: 5px;
   cursor: grab;
+  transition: all .2s;
 
   header{
       color: #989898;
