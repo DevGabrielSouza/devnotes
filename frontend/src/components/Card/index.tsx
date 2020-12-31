@@ -1,30 +1,45 @@
 import React from 'react'
 import { Container } from './style';
 
-import { useDrag } from 'react-dnd';
+import { useDrag, useDrop } from 'react-dnd';
+import DropCard from '../DropCard';
 
-export default function Card() {
+interface CardProps{
+    data: any;
+}
+
+export default function Card(data: CardProps) {
 
     const [{ isDragging }, dragRef] = useDrag({
         item: {
-            type: 'CARD'
+            type: 'CARD',
+            id: data.data.id,
         },
         collect: monitor => ({
             isDragging: monitor.isDragging(),
         })
     }); 
 
+    /* const [, dropRef] = useDrop({
+        accept: 'CARD',
+        hover(item, monitor): 
+    }); */
+
     return (
-        <Container ref={dragRef} isDragging={isDragging}>
+        <>
+            <Container ref={dragRef} isDragging={isDragging}>
 
-            <header>
-                label
-            </header>
+                <header>
+                    {data.data.content}
+                </header>
 
-            <div className="content">
-                <p>teste</p>
-            </div>
+                <div className="content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis, laborum, minima quia voluptate dignissimos nemo distinctio</p>
+                </div>
 
-        </Container>
+
+            </Container>
+            <DropCard/>
+        </>
     )
 }

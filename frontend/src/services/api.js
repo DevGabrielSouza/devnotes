@@ -12,19 +12,19 @@ export function loadLists() {
           },
           {
             id: 2,
-            content: 'Criar vídeo para o Youtube ensinando a recriar a interface do Pipefy',
+            content: 'Variávies',
             labels: ['#7159c1'],
             user: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/profile.png'
           },
           {
             id: 3,
-            content: 'Estudar módulo 03 de React Native',
+            content: 'Arrow function',
             labels: ['#7159c1'],
             user: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/profile.png'
           },
           {
             id: 4,
-            content: 'Gravar Aula "NextJS: Utilizando server-side rendering com ReactJS"',
+            content: 'Flexbox',
             labels: ['#54e1f7'],
             user: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/profile.png'
           },
@@ -54,7 +54,7 @@ export function loadLists() {
         cards: [
           {
             id: 7,
-            content: 'Gravar sobre Geolocalização e mapas com React Native',
+            content: 'CSS Grid',
             labels: ['#7159c1'],
             user: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/profile.png'
           },
@@ -78,7 +78,7 @@ export function loadLists() {
         cards: [
           {
             id: 10,
-            content: 'Gravar aula sobre deploy e CI com React Native',
+            content: 'Tuplas',
             labels: [],
           },
           {
@@ -88,7 +88,7 @@ export function loadLists() {
           },
           {
             id: 13,
-            content: 'Gravar Aula "Internacionalização de aplicações Node.js, ReactJS e React Native"',
+            content: 'Dicionários',
             labels: ['#7159c1'],
           }
         ]

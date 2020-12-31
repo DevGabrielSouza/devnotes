@@ -29,7 +29,7 @@ export default function BoardList(props: BoardListProps) {
                 <ul>
 
                     { cardList.map((card, index)  => (
-                        <Card key={index} />
+                        <Card key={index} data={card} />
                     )) }
 
                 </ul>
