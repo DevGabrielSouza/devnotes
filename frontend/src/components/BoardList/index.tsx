@@ -8,19 +8,24 @@ export default function BoardList() {
     return (
         <Container>
 
-            <header>
-                <h2>Título da lista</h2>
-                <button type="button">
-                    <MdAdd size={24} color="#fff" />
-                </button>
-            </header>
+            <div className="BoardList--item">
 
-            <ul>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-            </ul>
+                <header>
+                    <h2>Título da lista</h2>
+                    <button type="button">
+                        <MdAdd size={24} color="#fff" />
+                    </button>
+                </header>
+
+                <ul>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                </ul>
+
+            </div>
+
         </Container>
     )
 }
