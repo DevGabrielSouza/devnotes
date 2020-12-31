@@ -4,24 +4,34 @@ import { Container } from './style';
 import { MdAdd } from 'react-icons/md';
 import Card from '../Card';
 
-export default function BoardList() {
+interface BoardListProps{
+    title: string;
+    cards: any;
+}
+
+
+export default function BoardList(props: BoardListProps) {
+
+    const cardList: [] = props.cards;
+
     return (
         <Container>
 
             <div className="BoardList--item">
 
                 <header>
-                    <h2>Título da lista</h2>
+                    <h2>{props.title}</h2>
                     <button type="button">
                         <MdAdd size={24} color="#fff" />
                     </button>
                 </header>
 
                 <ul>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+
+                    { cardList.map((card, index)  => (
+                        <Card key={index} />
+                    )) }
+
                 </ul>
 
             </div>
