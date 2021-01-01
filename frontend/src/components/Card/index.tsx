@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './style';
 
-import { useDrag, useDrop } from 'react-dnd';
+import { useDrag } from 'react-dnd';
 import DropCard from '../DropCard/index';
 
 interface CardProps{

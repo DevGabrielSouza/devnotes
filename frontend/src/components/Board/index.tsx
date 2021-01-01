@@ -22,18 +22,17 @@ export default function Board() {
         //let toListIndex: number = lists.map(function(e) { return e.id; }).indexOf(to);
 
         const draggedItem = lists[listIndex];
-        const toDraggedItem = lists[toListId];
+        const toDraggedItem = lists[toListIndex];
 
         const listCards = draggedItem.cards;
 
         const cardIndex = (Object.values(listCards)).map(function(e) { return e.id; }).indexOf(from);
-        const toCardIndex = (Object.values(toDraggedItem.cards)).map(function(e) { return e.id; }).indexOf(to);
+        const toCardIndex = ((Object.values(toDraggedItem.cards)).map(function(e) { return e.id; }).indexOf(to) + 1);
 
         setLists( produce(lists, draft => {
             let draggedCard = draft[listIndex].cards[cardIndex];
             draft[listIndex].cards.splice(cardIndex, 1);
             draft[toListIndex].cards.splice(toCardIndex, 0, draggedCard);
-            console.log(toCardIndex);
         }) )
 
     }

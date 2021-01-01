@@ -5,6 +5,25 @@ export const Container = styled.div`
     padding: 0 10px;
     height: 100%;
     flex: 0 0 320px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+        background-color: rgba(0,0,0,.4);
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 10px;
+        background-color: rgba(0,0,0,.5);
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: #000000;
+        border: 2px solid #1E1B18;
+    }
 
     .BoardList--item{
 
