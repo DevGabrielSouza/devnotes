@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class CardController extends Controller
 {
@@ -20,8 +22,8 @@ class CardController extends Controller
     }
     
 
-    public function store(Request $request){
-        
+    public function store(){
+        return $_POST;
     }
 
     public function delete(Request $request){
