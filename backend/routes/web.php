@@ -16,3 +16,18 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'users'], function () use ($router) {
+
+    $router->get('/', 'UserController@index' );
+
+});
+
+// Card routes
+
+$router->group(['prefix' => 'cards'], function () use ($router) {
+
+    $router->get('/', 'CardController@index' );
+    $router->post('/', 'CardController@store' );
+
+});
