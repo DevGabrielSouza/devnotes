@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Card;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class CardFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Card::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'username' => $this->faker->firstName,
-            'password' => $this->faker->password,
-            'avatar' => $this->faker->sentence,
+            'title' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+            'user_id' => 1,
+            'card_list_id' => $this->faker->numberBetween(1,4),
         ];
     }
 }

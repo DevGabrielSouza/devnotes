@@ -18,8 +18,10 @@ class CreateCardsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('card_list_id');
             
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('card_list_id')->references('id')->on('card_lists');
             $table->timestamps();
         });
     }

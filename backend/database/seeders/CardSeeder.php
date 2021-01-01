@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder; 
 
 class CardSeeder extends Seeder
 {
@@ -14,10 +13,6 @@ class CardSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cards')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+        \App\Models\Card::factory()->count(10)->create(); 
     }
 }
