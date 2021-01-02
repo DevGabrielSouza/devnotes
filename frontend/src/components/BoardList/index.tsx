@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Container } from './style';
 import api from '../../services/api';
+
+import BoardContext from '../Board/context';
 
 import { MdAdd } from 'react-icons/md';
 import Card from '../Card';
@@ -11,8 +13,11 @@ interface BoardListProps{
 }
 
 
+
+
 export default function BoardList(props: BoardListProps) {
 
+    const { isListUpdated, move } : any  = useContext(BoardContext);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -21,7 +26,7 @@ export default function BoardList(props: BoardListProps) {
             setCards(response.data.data);
         })
 
-    }, []);
+    }, [() => move]);
 
 
 
