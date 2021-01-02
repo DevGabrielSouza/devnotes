@@ -40,7 +40,7 @@ export const Container = styled.div`
             border-radius: 20px;
         }
 
-        header{
+        header.boardList--Header{
             display: flex;
             justify-content: space-between;
             align-items: center;

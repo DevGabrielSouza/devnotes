@@ -15,6 +15,10 @@ export const Container = styled.div`
       margin-bottom: 10px;
   }
 
+  .title{
+    font-size: 14px;
+  }
+
   p{
       font-weight: 500;
       line-height: 20px;

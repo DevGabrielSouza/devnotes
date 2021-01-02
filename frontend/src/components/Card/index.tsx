@@ -32,7 +32,7 @@ export default function Card(card: CardProps) {
             <Container ref={dragRef} isDragging={isDragging}>
 
                 <header>
-                    {card.data.content}
+                    <span className="title">{card.data.content}</span>
                 </header>
 
                 <div className="content">
