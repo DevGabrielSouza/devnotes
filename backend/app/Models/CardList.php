@@ -13,5 +13,6 @@ class CardList extends Model implements AuthenticatableContract, AuthorizableCon
 {
     use Authenticatable, Authorizable, HasFactory;
 
+    protected $fillable = ['title', 'user_id'];
     
 }

@@ -32,12 +32,7 @@ class CardListController extends Controller
 
     public function update($cardList, Request $request){
         
-        $isUpdatedCard =  $this->cardList->find($cardList)->update([
-            'title' => $request->title,
-            'content' => $request->content,
-            'user_id' => $request->user_id,
-            'card_list_id' => $request->card_list_id,
-        ]);
+        $isUpdatedCard =  $this->cardList->find($cardList)->update($request->all());
 
         if ( $isUpdatedCard ){
             return response()->json(['data' => ['message' => 'card list successfully updated']]);
