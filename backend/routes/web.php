@@ -28,6 +28,11 @@ $router->group(['prefix' => 'users'], function () use ($router) {
 $router->group(['prefix' => 'cards'], function () use ($router) {
 
     $router->get('/', 'CardController@index' );
+    $router->get('/{card}', 'CardController@show' );
+
     $router->post('/', 'CardController@store' );
+    
+    $router->put('/{card}', 'CardController@update' );
+    $router->delete('/{card}', 'CardController@destroy' );
 
 });
