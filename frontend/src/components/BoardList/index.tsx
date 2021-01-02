@@ -26,8 +26,6 @@ export default function BoardList(props: BoardListProps) {
             setCards(response.data.data);
         })
 
-        console.log(updatedItem);
-
     }, [updatedItem]);
 
 

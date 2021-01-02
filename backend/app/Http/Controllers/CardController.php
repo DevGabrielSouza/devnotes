@@ -29,7 +29,7 @@ class CardController extends Controller
             $cardsModel = $this->card->where('card_list_id', '=', $request->input('cardList'));
         }
 
-        $cards = $cardsModel->paginate(10);
+        $cards = $cardsModel->orderBy('order')->paginate(10);
 
         return response()->json($cards);
     }

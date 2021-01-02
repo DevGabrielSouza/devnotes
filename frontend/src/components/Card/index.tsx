@@ -32,16 +32,16 @@ export default function Card(card: CardProps) {
             <Container ref={dragRef} isDragging={isDragging}>
 
                 <header>
-                    <span className="title">{card.data.content}</span>
+                    <span className="title">{card.data.title}</span>
                 </header>
 
                 <div className="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis, laborum, minima quia voluptate dignissimos nemo distinctio</p>
+                    <p>{card.data.content}</p>
                 </div>
 
 
             </Container>
-            <DropCard cardBefore={card.data.id} toListId={card.listId} />
+            <DropCard cardBefore={{ id: card.data.id, order: card.data.order }} toListId={card.listId} />
         </>
     )
 }

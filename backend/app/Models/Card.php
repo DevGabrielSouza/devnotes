@@ -13,5 +13,5 @@ class Card extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable, HasFactory;
 
-    protected $fillable = ['title', 'content', 'user_id', 'card_list_id'];
+    protected $fillable = ['title', 'content', 'user_id', 'card_list_id', 'order'];
 }
