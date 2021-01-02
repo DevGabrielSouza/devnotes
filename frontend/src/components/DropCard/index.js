@@ -18,10 +18,7 @@ export default function DropCard(props) {
             //monitor.isOver() ? setShow(true) : setShow(false);
         },
         drop(item, monitor){
-
-            move(item.id, props.cardBefore, item.listId, props.toListId);
-            item.id = props.cardBefore;
-            
+            move(item.id, props.toListId);
         }
     });
 

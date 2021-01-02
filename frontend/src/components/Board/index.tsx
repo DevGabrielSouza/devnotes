@@ -18,6 +18,7 @@ interface ListsVars{
 export default function Board() {
 
     const [lists, setLists] = useState([]);
+    const [isListUpdated, setIsListUpdated] = useState(false);
 
     useEffect(() => {
 
@@ -25,31 +26,13 @@ export default function Board() {
             setLists(response.data.data);
         })
 
-    }, []);
+    }, [isListUpdated]);
 
-    function move(from: number, to: number, listId: number, toListId: number){
+    function move(cardId: number, listId: number){
 
-        /*
-        // Percorre lists e retorna o Id da lista, onde (where) o id é igual ao listId
-        let listIndex: number = lists.map(function(e) { return e.id; }).indexOf(listId);
-        let toListIndex: number = lists.map(function(e) { return e.id; }).indexOf(toListId);
-        //let toListIndex: number = lists.map(function(e) { return e.id; }).indexOf(to);
-
-        const draggedItem = lists[listIndex];
-        const toDraggedItem = lists[toListIndex];
-
-        const listCards = draggedItem.cards;
-
-        const cardIndex = (Object.values(listCards)).map(function(e) { return e.id; }).indexOf(from);
-        const toCardIndex = ((Object.values(toDraggedItem.cards)).map(function(e) { return e.id; }).indexOf(to) + 1);
-
-        setLists( produce(lists, draft => {
-            let draggedCard = draft[listIndex].cards[cardIndex];
-            draft[listIndex].cards.splice(cardIndex, 1);
-            draft[toListIndex].cards.splice(toCardIndex, 0, draggedCard);
-        }) )
-
-        */
+        api.put(`cards/${cardId}`, { card_list_id: listId }).then(response => {
+            setIsListUpdated(true);
+        })
 
     }
 
