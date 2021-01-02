@@ -18,7 +18,7 @@ interface ListsVars{
 export default function Board() {
 
     const [lists, setLists] = useState([]);
-    const [isListUpdated, setIsListUpdated] = useState(true);
+    const [updatedItem, setUpdatedItem] = useState(0);
 
     useEffect(() => {
 
@@ -31,13 +31,13 @@ export default function Board() {
     function move(cardId: number, listId: number){
 
         api.put(`cards/${cardId}`, { card_list_id: listId }).then(response => {
-            setIsListUpdated(false);
+            setUpdatedItem(cardId);
         })
 
     }
 
     return (
-        <BoardContext.Provider value={{ lists, move, isListUpdated }}>
+        <BoardContext.Provider value={{ lists, move, updatedItem }}>
             <Container>
 
                 { lists.map((listItem: ListsVars, index) => (

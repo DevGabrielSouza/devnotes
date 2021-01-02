@@ -17,7 +17,7 @@ interface BoardListProps{
 
 export default function BoardList(props: BoardListProps) {
 
-    const { isListUpdated, move } : any  = useContext(BoardContext);
+    const { updatedItem, move } : any  = useContext(BoardContext);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -26,7 +26,9 @@ export default function BoardList(props: BoardListProps) {
             setCards(response.data.data);
         })
 
-    }, [() => move]);
+        console.log(updatedItem);
+
+    }, [updatedItem]);
 
 
 

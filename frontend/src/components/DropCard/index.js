@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Container } from './style';
 
 import { useDrop } from 'react-dnd';
@@ -11,6 +11,12 @@ export default function DropCard(props) {
 
     const [show, setShow] = useState(false);
 
+    useEffect(() => {
+
+        setShow(true);
+
+    }, [() => move]);
+
     const [, dropRef] = useDrop({
         accept: 'CARD',
         // drop instead of hover to execute only when drop
@@ -18,7 +24,7 @@ export default function DropCard(props) {
             //monitor.isOver() ? setShow(true) : setShow(false);
         },
         drop(item, monitor){
-            move(item.id, props.toListId);
+            move(item.id, props.toListId); 
         }
     });
 
