@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Http\Middleware\CorsMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,8 +33,20 @@ $router->group(['prefix' => 'cards'], function () use ($router) {
     $router->get('/{card}', 'CardController@show' );
 
     $router->post('/', 'CardController@store' );
-    
+
     $router->put('/{card}', 'CardController@update' );
     $router->delete('/{card}', 'CardController@destroy' );
+
+});
+
+$router->group(['prefix' => 'card-lists'], function () use ($router) {
+
+    $router->get('/', 'CardListController@index' );
+    $router->get('/{cardList}', 'CardListController@show' );
+
+    $router->post('/', 'CardListController@store' );
+    
+    $router->put('/{cardList}', 'CardListController@update' );
+    $router->delete('/{cardList}', 'CardListController@destroy' );
 
 });

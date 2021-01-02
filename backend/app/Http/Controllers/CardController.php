@@ -21,8 +21,16 @@ class CardController extends Controller
         $this->card = $card;
     }
 
-    public function index(){
-        $cards = $this->card->paginate(10);
+    public function index(Request $request){
+
+        $cardsModel = $this->card;
+
+        if( $request->input('cardList') ){
+            $cardsModel = $this->card->where('card_list_id', '=', $request->input('cardList'));
+        }
+
+        $cards = $cardsModel->paginate(10);
+
         return response()->json($cards);
     }
 
